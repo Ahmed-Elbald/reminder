@@ -12,9 +12,11 @@
 i {
     cursor: pointer;
     color: white;
+    font-size: .8rem;
 }
 :root {
     --iden: white;
+    --radius-padding: 10px
 }
 .flex-between {
     display: flex;
@@ -26,9 +28,7 @@ i {
     align-items: center;
 }
 .parent {
-    padding: 10px;
-    max-width: 350px;
-    margin: auto;
+    padding: var(--radius-padding);
     background-color: #f2eff6;
 }
 .parent > p {
@@ -36,9 +36,9 @@ i {
     text-align: right;
 }
 .parent > input {
-    border-radius: 10px;
+    border-radius: var(--radius-padding);
     background-color: #e3e2e8;
-    padding: 10px;
+    padding: var(--radius-padding);
     font-size: 1rem;
     width: 100%;
 }
@@ -48,26 +48,19 @@ i {
     gap: 25px;
     margin: 15px 0;
 }
-.icons i {
-    font-size: .8rem;
-}
 .parent > .icons > div {
-    display: grid;
-    grid-template-columns: repeat(2,30%);
+    display: flex;
     justify-content: space-between;
-    border-radius: 10px;
+    border-radius: var(--radius-padding);
     background-color: var(--iden);
-    padding: 10px;
+    padding: var(--radius-padding);
 }
 .parent > .icons > div span {
     color: gray;
     font-weight: bold;
 }
-.parent > .icons > div > div:first-child {
-    display: flex;
-    flex-direction: column;
-}
-.parent > .icons > div > div:first-child > div:first-child {
+.parent > .icons > div > div:first-child > div:first-child,
+.icons-box > div .first div {
     border-radius: 50%;
     text-align: center;
     padding: 1px;
@@ -93,12 +86,13 @@ i {
 }
 .icons-box {
     background-color: var(--iden);
-    border-radius: 10px;
+    padding: var(--radius-padding);
+    border-radius: var(--radius-padding);
 }
 .icons-box > div {
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding: var(--radius-padding);
 }
 .first {
     display: flex;
@@ -107,12 +101,6 @@ i {
 .icons-box > div > div:nth-child(2) > i {
     color: gray;
 }
-.icons-box > div .first div {
-    border-radius: 50%;
-    width: 30px;
-    text-align: center;
-}
-
 .icons-box > div:first-child {
     border-bottom: 1px solid #eee;
 }
